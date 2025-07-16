@@ -1,0 +1,96 @@
+.main-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 0 12px rgba(0, 128, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #2d4739;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.device-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.device-table th {
+  background-color: #a6dcb6;
+  padding: 10px;
+  color: #2d4739;
+  text-align: left;
+}
+
+.device-table td {
+  padding: 10px;
+  border-bottom: 1px solid #cde9d1;
+}
+
+.btn-on,
+.btn-off {
+  padding: 6px 12px;
+  margin: 0 3px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-on {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-off {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.btn-on.inactive,
+.btn-off.inactive {
+  background-color: #e0e0e0;
+  color: #666;
+  cursor: default;
+}
+
+.estado-botones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-on, .btn-off, .btn-temp {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-on {
+  background-color: #4caf50;
+  color: white;
+}
+.btn-off {
+  background-color: #f44336;
+  color: white;
+}
+.btn-on.inactive, .btn-off.inactive {
+  opacity: 0.4;
+}
+
+.temp-control {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.temp-control input {
+  width: 70px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Usuario - Docente</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/components/navbar.css" />
+  <link rel="stylesheet" href="../../css/components/table.css" />
+</head>
+<body>
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Logo" />
+      <span>SISTEMA IoT</span>
+    </div>
+   
+    </div>
+    <div class="nav-links">
+      <a href="../usuarios/usuarios_docente.html">Usuarios</a>
+      <a href="../laboratorios/laboratorios_admin.html" class="active">Laboratorios</a>
+      <a href="../dispositivos/dispositivos.html">Dispositivos</a>
+      <a href="../estatus/estatus.html">Estatus</a>
+      <a href="../acciones/acciones.html">Acciones</a>
+      <a href="../dispositivos/dispositivos.html">Dispositivos</a>
+      <a href="../reglas/reglas.html">Reglas</a>
+     </nav>
+ <div class="nav-links">
+      <a href="../dashboard/dashboard_docente.html" class="active">Inicio</a>
+    </div>
+    <div class="user-menu">
+      <button class="user-btn" onclick="toggleDropdown()">Lesly docente ▼</button>
+      <div id="dropdown-menu" class="dropdown-content">
+        <a href="../../IoT_control/index.html">Cerrar sesión</a>
+      </div>
+
+  <!-- Contenido Principal -->
+  <main class="main-container">
+    <section class="usuarios-section">
+      <div class="header">
+        <h2>Mi Perfil</h2>
+      </div>
+
+      <!-- Tabla de perfil -->
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody id="usuariosBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    const usuarioActual = JSON.parse(localStorage.getItem("usuario")) || {
+      id: 3,
+      nombre: "Lesly",
+      correo: "leslymestiza@gmail.com",
+      rol: "docente",
+      fecha: "2025-07-07"
+    };
+
+    const tbody = document.getElementById("usuariosBody");
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td>${usuarioActual.id}</td>
+      <td>${usuarioActual.nombre}</td>
+      <td>${usuarioActual.correo}</td>
+      <td>${usuarioActual.rol}</td>
+      <td>${usuarioActual.fecha}</td>
+    `;
+    tbody.appendChild(fila);
+
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

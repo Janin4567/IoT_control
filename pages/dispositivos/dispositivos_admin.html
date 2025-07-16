@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dispositivos - Sistema IoT</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/components/navbar.css">
+  <link rel="stylesheet" href="../../css/dispositivos/dispositivos.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="../../assets/logo.png" alt="Logo IoT">
+      <span>SISTEMA IoT</span>
+    </div>
+  <div class="nav-links">
+      <a href="../../index.html">Inicio de sesión</a>
+      <a href="../usuarios/usuarios_admin.html">Usuarios</a>
+      <a href="../laboratorios/laboratorios_admin.html">Laboratorios</a>
+      <a href="../dispositivos/dispositivos_admin.html">Dispositivos</a>
+      <a href="../status/status_dispositivos.html">Status de Dispositivos</a>
+      <a href="../status/control_dispositivos.html">Control</a>
+      <a href="../reglas/reglas.html">Reglas de Automatización</a>
+      <a href="../monitoreo/monitoreo.html">Monitoreo</a>
+
+    </div> 
+  </div>
+    <div class="user-dropdown">
+  <span onclick="toggleUserMenu()">Admin ▼</b></span>
+  <div id="userMenu" class="user-menu">
+    <a href="../../index.html">Cerrar sesión</a>
+  </div>
+</div>
+
+  </nav>
+
+  <!-- ENCABEZADO Y BOTÓN -->
+  <div class="header-flex">
+    <h2>Dispositivos</h2>
+    <button class="btn-agregar" onclick="mostrarFormularioAgregar()">Agregar Dispositivo</button>
+  </div>
+
+  <!-- MENSAJE DE ÉXITO -->
+  <div id="mensajeExito" class="mensaje-exito" style="display: none;">✅ ¡Operación realizada con éxito!</div>
+
+  <!-- TABLA DE DISPOSITIVOS -->
+  <table class="tabla-dispositivos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Laboratorio</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-dispositivos-body">
+      <!-- Datos se llenan dinámicamente -->
+    </tbody>
+  </table>
+
+  <!-- FORMULARIO AGREGAR -->
+  <section class="form-card" id="formAgregarSeccion" style="display: none;">
+    <h3>Agregar Dispositivo</h3>
+    <form id="formAgregar">
+      <div class="form-row"><label>Nombre:</label><input type="text" name="nombre" required></div>
+      <div class="form-row"><label>Tipo:</label><input type="text" name="tipo" required></div>
+      <div class="form-row"><label>Laboratorio:</label><input type="text" name="laboratorio" required></div>
+      <div class="form-row"><label>Marca:</label><input type="text" name="marca"></div>
+      <div class="form-row"><label>Modelo:</label><input type="text" name="modelo"></div>
+      <div class="form-row"><label>Descripción:</label><textarea name="descripcion"></textarea></div>
+      <div class="form-buttons">
+        <button type="submit">Guardar</button>
+        <button type="button" onclick="ocultarFormularioAgregar()">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- FORMULARIO EDITAR -->
+  <section class="form-card" id="formEditarSeccion" style="display: none;">
+    <h3>Editar Dispositivo</h3>
+    <form id="formEditar">
+      <input type="hidden" name="id">
+      <div class="form-row"><label>Nombre:</label><input type="text" name="nombre" required></div>
+      <div class="form-row"><label>Tipo:</label><input type="text" name="tipo" required></div>
+      <div class="form-row"><label>Laboratorio:</label><input type="text" name="laboratorio" required></div>
+      <div class="form-row"><label>Marca:</label><input type="text" name="marca"></div>
+      <div class="form-row"><label>Modelo:</label><input type="text" name="modelo"></div>
+      <div class="form-row"><label>Descripción:</label><textarea name="descripcion"></textarea></div>
+      <div class="form-buttons">
+        <button type="submit">Actualizar</button>
+        <button type="button" onclick="cancelarEdicion()">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="../../js/dispositivos.js"></script>
+</body>
+</html>
