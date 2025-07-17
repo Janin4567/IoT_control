@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   const loginForm = document.getElementById('loginForm');
   const resetForm = document.getElementById('resetForm');
+  const API_URL = "http://34.205.230.55:5000/api/index";
 
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -14,11 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      fetch('https://34.205.230.55:5000/api/index', {
+      fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // 👈 importante para sesiones
         body: JSON.stringify({ email, password })
       })
       .then(response => response.json())
@@ -46,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   // === RECUPERAR CONTRASEÑA ===
   if (resetForm) {
     resetForm.addEventListener('submit', (e) => {
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // 👈 también aquí si el backend necesita sesión
         body: JSON.stringify({ email: resetEmail })
       })
       .then(response => response.json())
@@ -76,4 +79,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
