@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loginForm = document.getElementById('loginForm');
   const resetForm = document.getElementById('resetForm');
-  const API_URL = "http://34.205.230.55:5000/api/index";
+  const API_URL = "https://34.205.230.55:5000/api/index";
 
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      fetch('http://34.205.230.55:5000/api/reset-password', {
+      fetch('https://34.205.230.55:5000/api/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
