@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      fetch('http://34.205.230.55:5000/api/index', {
+      fetch('https://34.205.230.55:5000/api/index', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
