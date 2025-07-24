@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Status de Dispositivos</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/components/navbar.css" />
+  <link rel="stylesheet" href="../../css/status/status_dispositivos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Logo" />
+      <span>SISTEMA IoT</span>
+    </div>
+    <div class="nav-links">
+      <a href="../../index.html">Inicio de sesión</a>
+      <a href="../usuarios/usuarios_admin.html">Usuarios</a>
+      <a href="../laboratorios/laboratorios_admin.html">Laboratorios</a>
+      <a href="../dispositivos/dispositivos_admin.html">Dispositivos</a>
+      <a href="../status/status_dispositivos.html">Status de Dispositivos</a>
+      <a href="../status/control_dispositivos.html">Control</a>
+      <a href="../monitoreo/monitoreo.html">Monitoreo</a>
+
+    <div class="user-menu">
+      <button class="user-btn" onclick="toggleDropdown()">Admin ▼</button>
+      <div id="dropdown-menu" class="dropdown-content">
+        <a href="../../index.html">Cerrar sesión</a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+    <main class="main-container">
+    <div class="header">
+    <h2>Status de Dispositivos</h2>
+   
+ </div>
+    <table class="device-table">
+      <thead>
+        <tr>
+          <th>Dispositivo</th>
+          <th>Tipo</th>
+          <th>Laboratorio</th>
+          <th>Encendido</th>
+          <th>Temp. Actual</th>
+          <th>Última Actualización</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-estatus">
+        <!-- Dispositivos se insertan con JS -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- JS -->
+  <script src="../../js/navbar.js"></script>
+  <script src="../../js/status_dispositivos.js"></script>
+</body>
+</html>

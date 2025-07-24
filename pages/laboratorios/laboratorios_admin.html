@@ -1,0 +1,134 @@
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laboratorios - IoT Control</title>
+  <link rel="stylesheet" href="../../css/components/navbar.css" />
+  <link rel="stylesheet" href="../../css/laboratorios.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Logo">
+      <span>SISTEMA IoT</span>
+    </div>
+    <div class="nav-links">
+      <a href="../../index.html">Inicio de sesión</a>
+      <a href="../usuarios/usuarios_admin.html">Usuarios</a>
+      <a href="../laboratorios/laboratorios_admin.html">Laboratorios</a>
+      <a href="../dispositivos/dispositivos_admin.html">Dispositivos</a>
+      <a href="../status/status_dispositivos.html">Status de Dispositivos</a>
+      <a href="../status/control_dispositivos.html">Control</a>
+      <a href="../monitoreo/monitoreo.html">Monitoreo</a>
+    </div>
+    </div>
+    <div class="user-menu">
+      <button class="user-btn" onclick="toggleDropdown()">Admin▼</small></button>
+      <div id="dropdown-menu" class="dropdown-content">
+        <a href="../../index.html">Cerrar sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container">
+    <h2>Laboratorios</h2>
+
+    <table class="lab-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Ubicación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="laboratoriosBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalLab" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h3 id="modalTitulo">Editar Laboratorio</h3>
+      <form id="formLab">
+        <label for="nombreLab">Nombre:</label>
+        <input type="text" id="nombreLab" required />
+        <label for="ubicacionLab">Ubicación:</label>
+        <input type="text" id="ubicacionLab" required />
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+  
+   <script>
+    let laboratorios = [
+      { id: 1, nombre: "Laboratorio IoT", ubicacion: "Modulo 1 – Planta Alta" },
+      { id: 2, nombre: "Laboratorio 1", ubicacion: "" },
+      { id: 3, nombre: "Laboratorio 2", ubicacion: "" }
+    ];
+    
+
+    let editandoId = null;
+
+    function cargarTabla() {
+      const tbody = document.getElementById("laboratoriosBody");
+      tbody.innerHTML = "";
+      laboratorios.forEach(lab => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${lab.id}</td>
+          <td>${lab.nombre}</td>
+          <td>${lab.ubicacion}</td>
+          <td><a href="#" onclick="editarLaboratorio(${lab.id})">Editar</a></td>
+        `;
+        tbody.appendChild(fila);
+      });
+    }
+     function editarLaboratorio(id) {
+      const lab = laboratorios.find(l => l.id === id);
+      if (lab) {
+        editandoId = id;
+        document.getElementById("nombreLab").value = lab.nombre;
+        document.getElementById("ubicacionLab").value = lab.ubicacion;
+        document.getElementById("modalLab").style.display = "flex";
+      }
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalLab").style.display = "none";
+    }
+
+    function guardarLaboratorio(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombreLab").value;
+      const ubicacion = document.getElementById("ubicacionLab").value;
+
+      if (editandoId) {
+        const lab = laboratorios.find(l => l.id === editandoId);
+        lab.nombre = nombre;
+        lab.ubicacion = ubicacion;
+      }
+
+      cerrarModal();
+      cargarTabla();
+    }
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onload = () => {
+      cargarTabla();
+      document.getElementById("formLab").addEventListener("submit", guardarLaboratorio);
+    };
+
+
+  </script>
+
+</body>
+</html>

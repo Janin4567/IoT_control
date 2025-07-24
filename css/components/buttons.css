@@ -1,0 +1,213 @@
+/* === buttons.css === */
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 4px;
+  color: #2d4739;
+  transition: color 0.2s;
+}
+
+.edit-btn:hover {
+  color: #4caf50;
+}
+
+.delete-btn:hover {
+  color: #c62828;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 4px;
+  color: #2d4739;
+  transition: color 0.2s;
+}
+
+.edit-btn:hover {
+  color: #4caf50;
+}
+
+.delete-btn:hover {
+  color: #c62828;
+}
+
+/* === Modal estilizado === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid #4caf50;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #2d4739;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2d4739;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #a6dcb6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: #f9fdfb;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 3px #a6dcb6;
+}
+
+.modal-content .btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  font-weight: bold;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #4caf50;
+}
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #2d4739;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0fdf4;
+}
+
+.btn-agregar {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.btn-agregar:hover {
+  background-color: #388e3c;
+}
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4fdf7;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #a6dcb6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-flex h2 {
+  margin: 0;
+  color: #2d4739;
+}
+
+.btn-agregar {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-agregar:hover {
+  background-color: #388e3c;
+}

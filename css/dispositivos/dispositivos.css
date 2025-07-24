@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4fdf7;
+  margin: 0;
+  padding: 0;
+  color: #2d4739;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2d4739;
+  padding: 1rem;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.user-dropdown {
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #2d4739;
+  right: 0;
+  top: 100%;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.15);
+}
+
+.user-dropdown:hover .user-menu {
+  display: block;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background: white;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 128, 0, 0.1);
+}
+
+.btn-agregar {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mensaje-exito {
+  background-color: #d0f0d5;
+  color: #1b5e20;
+  text-align: center;
+  padding: 1rem;
+  width: 80%;
+  margin: 1rem auto;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tabla-dispositivos {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 12px rgba(0, 128, 0, 0.08);
+  border-radius: 8px;
+}
+
+.tabla-dispositivos th {
+  background: #a6dcb6;
+  padding: 12px;
+  text-align: left;
+  color: #2d4739;
+}
+
+.tabla-dispositivos td {
+  padding: 12px;
+  border-top: 1px solid #e0f3e5;
+}
+
+.form-card {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 128, 0, 0.1);
+}
+
+.form-card h3 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-buttons button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}

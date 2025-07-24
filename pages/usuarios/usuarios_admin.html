@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Usuarios - Sistema IoT</title>
+  <link rel="stylesheet" href="../../css/usuarios.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <strong>SISTEMA IoT</strong>
+    </div>
+    <div class="nav-links">
+      <a href="../../index.html">Inicio de sesión</a>
+      <a class="active" href="#">Usuarios</a>
+      <a href="../laboratorios/laboratorios_admin.html">Laboratorios</a>
+      <a href="../dispositivos/dispositivos_admin.html">Dispositivos</a>
+      <a href="../status/status_dispositivos.html">Status de Dispositivos</a>
+      <a href="../status/control_dispositivos.html">Control</a>
+      <a href="../monitoreo/monitoreo.html">Monitoreo</a>
+    </div>
+    <div class="user-dropdown">
+       <span onclick="toggleUserMenu()">Admin ▼</span>
+       <div id="userMenu" class="user-menu">
+       <a href="../../index.html">Cerrar sesión</a>  
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+     <div class="header">
+    <h2>Usuarios</h2>
+    <button class="btn" onclick="document.getElementById('modalUsuario').style.display='block'">+ Agregar Usuario</button>
+     </div>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="usuariosBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal Agregar -->
+  <div id="modalUsuario" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalUsuario').style.display='none'">&times;</span>
+      <h3>Agregar usuario</h3>
+      <form id="formUsuario">
+        <input id="nombre" type="text" name="nombre" placeholder="Nombre" required />
+        <input id="correo" type="email" name="correo" placeholder="Correo" required />
+        <select id="rol" name="rol" required>
+          <option value="admin">admin</option>
+          <option value="docente">docente</option>
+          <option value="supervisor">supervisor</option>
+        </select>
+        <input id="contrasena" type="password" name="contrasena" placeholder="Contraseña" required />
+        <button type="submit" class="btn">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Editar -->
+  <div id="modalEditar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModalEditar()">&times;</span>
+      <h3>Editar usuario</h3>
+      <form id="formEditar">
+        <input type="hidden" id="edit-id" />
+        <input type="text" id="edit-nombre" placeholder="Nombre" required />
+        <input type="password" id="edit-contrasena" placeholder="Contraseña" required />
+        <button type="submit" class="btn">Guardar cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../js/usuarios.js"></script>
+</body>
+</html>
+

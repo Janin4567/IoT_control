@@ -1,0 +1,45 @@
+/* === table.css === */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table th, .custom-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #d6ecd8;
+  text-align: left;
+  color: #2d4739;
+}
+
+.custom-table th {
+  background-color: #a6dcb6;
+  color: #1b3c29;
+  font-weight: bold;
+}
+
+.custom-table tr:hover {
+  background-color: #f0fdf4;
+}
+
+.main-container {
+  padding: 2rem;
+  background: #f4fdf7;
+  min-height: 100vh;
+}
+.tabla-dispositivos {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 100, 0, 0.1);
+}
+.tabla-dispositivos th, .tabla-dispositivos td {
+  padding: 12px;
+  border: 1px solid #35a958;
+  text-align: center;
+}
+
+
